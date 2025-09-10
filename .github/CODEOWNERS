@@ -1,0 +1,19 @@
+# Global ownership — all files require your review
+* @abhish1227
+
+# Backend logic
+/src/main/java/com/abhish/hospitalDB/service/* @abhish1227
+
+# Controllers
+/src/main/java/com/abhish/hospitalDB/controllers/* @abhish1227
+
+# DTOs and entities
+/src/main/java/com/abhish/hospitalDB/DTOs/* @abhish1227
+/src/main/java/com/abhish/hospitalDB/entity/* @abhish1227
+
+# Configuration files
+/src/main/resources/* @abhish1227
+
+# Documentation
+README.md @abhish1227
+LICENSE @abhish1227
