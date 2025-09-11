@@ -21,13 +21,13 @@ import static org.springframework.http.HttpStatus.NOT_FOUND;
 public class DoctorController {
     private final DoctorService doctorService;
 
-    @GetMapping("/all")
+    @GetMapping("/public/all")
     public ResponseEntity<APIResponse> getAllDoctors(){
         List<Doctor> doctors = doctorService.getAllDoctors();
         return ResponseEntity.ok(new APIResponse("Doctors fetched successfully.", doctors));
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/public/{id}")
     public ResponseEntity<APIResponse> getDoctorById(@PathVariable Long id){
         try {
             Doctor doctor = doctorService.getDoctorById(id);
@@ -38,7 +38,7 @@ public class DoctorController {
     }
 
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/admin/update/{id}")
     public ResponseEntity<APIResponse> updateDoctor(@PathVariable Long id, @Valid @RequestBody DoctorUpdateRequestDTO request){
         try {
             Doctor updatedDoctor = doctorService.updateDoctorDetails(id, request);
@@ -49,7 +49,7 @@ public class DoctorController {
 
     }
 
-    @PostMapping("/create")
+    @PostMapping("/admin/create")
     public ResponseEntity<APIResponse> createNewDoctor(@RequestBody @Valid DoctorCreateRequestDTO request){
 
         try {
@@ -61,7 +61,7 @@ public class DoctorController {
 
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/admin/delete/{id}")
     public ResponseEntity<APIResponse> deleteDoctor(@PathVariable Long id){
         try {
             doctorService.deleteDoctorById(id);

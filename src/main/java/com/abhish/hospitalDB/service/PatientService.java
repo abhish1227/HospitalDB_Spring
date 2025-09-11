@@ -3,7 +3,6 @@ package com.abhish.hospitalDB.service;
 import com.abhish.hospitalDB.DTOs.CreatePatientRequestDTO;
 import com.abhish.hospitalDB.DTOs.PatientResponseDTO;
 import com.abhish.hospitalDB.DTOs.UpdatePatientRequestDTO;
-import com.abhish.hospitalDB.configuration.ModelMapperConfig;
 import com.abhish.hospitalDB.entity.Patient;
 import com.abhish.hospitalDB.repository.PatientRepository;
 import jakarta.persistence.EntityNotFoundException;

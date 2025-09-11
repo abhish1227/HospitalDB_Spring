@@ -18,7 +18,7 @@ import java.util.List;
 import static org.springframework.http.HttpStatus.CONFLICT;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
-@RequestMapping("/patients")
+@RequestMapping("/patients/admin")
 @RestController
 @RequiredArgsConstructor
 public class PatientController {

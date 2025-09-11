@@ -1,17 +1,24 @@
 package com.abhish.hospitalDB.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User{
+@Table(name = "users")
+@Builder
+public class User implements UserDetails { /*this is done for the authentication providers such as DAO
+                                            to fetch details of users that are stored in the database,
+                                            rather than using InMmemoryUserDetailsManager to fetch users
+                                            saved in-memory.*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,4 +27,9 @@ public class User{
     private String username;
 
     private String password;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() { //to grant roles to users
+        return List.of();
+    }
 }
